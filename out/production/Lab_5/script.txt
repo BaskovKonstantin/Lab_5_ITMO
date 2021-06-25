@@ -1,0 +1,3 @@
+help
+help
+execute command scr//script.txt
