@@ -1,11 +1,14 @@
 import DragonChar.*;
 
-import java.io.*;
-import java.util.Collection;
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Enumeration;
+import java.util.TreeSet;
 
 
 public class CommandList {
+
         public static void helpCommand (){
             System.out.println("help : вывести справку по доступным командам");
             System.out.println("info : вывести в стандартный поток вывода информацию о коллекции (тип, дата инициализации, количество элементов и т.д.)");
@@ -238,6 +241,8 @@ public class CommandList {
         int maxAge = 0;
         int originSize = Collection.getSize();
         int currentKey = 0;
+        TreeSet <Dragon> DragonSet = new TreeSet<Dragon>();
+
 
         for (int i = 1; i<=originSize; i++) {
             maxAge = 0;
@@ -247,6 +252,8 @@ public class CommandList {
             while (listKey.hasMoreElements()) {
                 Key = listKey.nextElement();
                 Dragon CurrentDragon = Collection.getDragon(Key);
+                CurrentDragon.compareTo(Collection.getDragon(Key));
+                DragonSet.add(CurrentDragon);
 
                 if (maxAge<CurrentDragon.getAge()) {
                     maxAge = (int) CurrentDragon.getAge();

@@ -1,7 +1,6 @@
 import DragonChar.DragonCollection;
 
-import java.io.*;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class Main  {
     public static void main(String[] args) throws IOException {
@@ -17,6 +16,10 @@ public class Main  {
 
             while (true){
                 String command = Console.InputCommand();
+                if (command == null) {
+                    System.out.println("Bad command");
+                    break;
+                }
                 Collection = CommandsExecute.ExecuteCommand(command, Collection);
                 }
             }

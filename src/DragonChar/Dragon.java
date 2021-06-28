@@ -1,9 +1,8 @@
 package DragonChar;
 
-import java.io.Console;
-import java.util.*;
+import java.util.Date;
 
-public class Dragon {
+public class Dragon implements Comparable<Dragon> {
 
     private long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
@@ -118,5 +117,10 @@ public class Dragon {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Dragon o) {
+        return (int) (this.age-o.getAge());
     }
 }
