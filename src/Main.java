@@ -15,12 +15,17 @@ public class Main  {
             }
 
             while (true){
+                try {
                 String command = Console.InputCommand();
                 if (command == null) {
                     System.out.println("Bad command");
                     break;
                 }
                 Collection = CommandsExecute.ExecuteCommand(command, Collection);
+                }
+                catch ( Exception exc){
+                    System.out.println("Something wrong");
+                }
                 }
             }
 }

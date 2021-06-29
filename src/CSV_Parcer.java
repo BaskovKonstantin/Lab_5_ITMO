@@ -116,14 +116,14 @@ public class CSV_Parcer {
         String name = "";
 
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 name = word;
                 word = "";
                 System.out.println(name+" get a name");
-                i = bufferedInputStream.read();
+
                 break;
             }
         }
@@ -131,14 +131,14 @@ public class CSV_Parcer {
         double x = 2;
 
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 x = Integer.parseInt(word);
                 word = "";
                 System.out.println(x+" get a x Coordinate");
-                i = bufferedInputStream.read();
+
                 break;
             }
         }
@@ -146,14 +146,14 @@ public class CSV_Parcer {
         Long y = Long.valueOf(2);
 
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 y = Long.valueOf(Integer.parseInt(word));
                 word = "";
                 System.out.println(y +" get a y Coordinate");
-                i = bufferedInputStream.read();
+
                 break;
             }
         }
@@ -161,28 +161,28 @@ public class CSV_Parcer {
         long age = 1;
 
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 age = Long.valueOf(Integer.parseInt(word));
                 word = "";
                 System.out.println(name + " lived for "+ age +" years ");
-                i = bufferedInputStream.read();
+
                 break;
             }
         }
 
         String description = "";
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 description = word;
                 word = "";
                 System.out.println("This dragon ... " + description);
-                i = bufferedInputStream.read();
+
                 break;
             }
         }
@@ -191,14 +191,14 @@ public class CSV_Parcer {
         int weight = 1;
 
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 weight = Integer.parseInt(word);
                 word = "";
                 System.out.println("This dragon have  weight equal " + weight + "kg");
-                i = bufferedInputStream.read();
+
                 break;
             }
         }
@@ -206,14 +206,14 @@ public class CSV_Parcer {
         String Type = "Fire";
 
         while((i = bufferedInputStream.read())!= -1){
-            if  (i!=13){
+            if  (i!=44){
                 word = word + (char)i;
             }
             else {
                 Type = word;
                 word = "";
-                System.out.println("This is "+ Type + "dragon");
-                i = bufferedInputStream.read();
+                System.out.println("This is "+ Type + " dragon");
+
                 break;
             }
         }
